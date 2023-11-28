@@ -1,8 +1,7 @@
 #pragma once
+#include "Window.hpp"
 
-#include "PCH.hpp"
-
-namespace Box
+namespace FRAME
 {
     class FRAME_API Application
     {
@@ -11,6 +10,9 @@ namespace Box
         virtual ~Application();
         void Init();
         void Update();
+
+    private:
+        Unique<Window> m_pWindow;
     };
 
     extern Application* CreatApplication();

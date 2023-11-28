@@ -1,6 +1,7 @@
+#include "PCH.hpp"
 #include "Application.hpp"
 
-namespace Box
+namespace FRAME
 {
     Application::Application() = default;
 
@@ -8,9 +9,20 @@ namespace Box
 
     void Application::Init()
     {
+        auto props = WindowProps();
+        props.Title = "App";
+        props.Width = 800;
+        props.Height = 600;
+        m_pWindow = CreateUnique<Window>(props);
     }
 
     void Application::Update()
     {
+
+        while(m_pWindow.get())
+        {
+            m_pWindow->OnUpdate();
+        }
+        
     }
 }

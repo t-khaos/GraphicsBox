@@ -15,7 +15,8 @@ target("FRAME")
 
     add_files("./**.cpp")
     add_headerfiles("./(**.hpp)")
+    add_headerfiles("./(**.h)")
 
-    add_packages("glfw", "glad", "glm","stb")
+    add_packages("glfw", "glad", "glm", "stb", "spdlog")
 
 target_end()

@@ -6,14 +6,20 @@
     #define FRAME_API __declspec(dllimport)
 #endif // FRAME_API
 
-#ifdef FRAME_MODE_DEBUG
-#define FRAME_ASSERT(x,...){ if (!(x)) { LOG_DEV_ERROR("Assertion Failed:{0}", __VA_ARGS__); __debugbreak(); } }
-#else
-    #define FRAME_ASSERT(x, ...)
-#endif
 
-#define REGISTER_APPLICATION(x)\
-Box::Application* Box::CreatApplication()\
-{\
-    return new Sandbox();\
+namespace FRAME
+{
+    template<typename T>
+    using Unique = std::unique_ptr<T>;
+    template<typename T, typename... Args>
+    constexpr Unique<T> CreateUnique(Args&&... args) {
+        return std::make_unique<T>(std::forward<Args>(args)...);
+    }
+
+    template<typename T>
+    using Shared = std::shared_ptr<T>;
+    template<typename T, typename... Args>
+    constexpr Shared<T> CreateShared(Args&&... args) {
+        return std::make_shared<T>(std::forward<Args>(args)...);
+    }
 }

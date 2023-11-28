@@ -5,7 +5,7 @@
 
 int main()
 {
-    auto app = Box::CreatApplication();
+    auto app = FRAME::CreatApplication();
     app->Init();
     app->Update();
     delete app;

@@ -1,6 +1,6 @@
 #include "FRAME.hpp"
 
-class Sandbox : public Box::Application
+class Sandbox : public FRAME::Application
 {
 public:
     Sandbox()
@@ -11,4 +11,7 @@ public:
     ~Sandbox() = default;
 };
 
-REGISTER_APPLICATION(Sandbox)
+FRAME::Application* FRAME::CreatApplication()
+{
+    return new Sandbox();
+}
