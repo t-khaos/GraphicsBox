@@ -8,6 +8,6 @@ target("Sandbox")
     add_headerfiles("./(**.hpp)")
 
     add_deps("FRAME")
-    add_packages("glfw", "glad", "glm", "stb", "spdlog")
+    add_packages("glfw", "glad", "glm","stb")
 
 target_end()
