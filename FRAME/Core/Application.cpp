@@ -13,7 +13,7 @@ namespace FRAME
         props.Title = "App";
         props.Width = 800;
         props.Height = 600;
-        m_pWindow = CreateUnique<Window>(props);
+        m_pWindow = std::make_unique<Window>(props);
     }
 
     void Application::Update()

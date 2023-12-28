@@ -3,7 +3,7 @@
 
 namespace FRAME
 {
-    class FRAME_API Application
+    struct FRAME_API Application
     {
     public:
         Application();
@@ -12,7 +12,7 @@ namespace FRAME
         void Update();
 
     private:
-        Unique<Window> m_pWindow;
+        std::unique_ptr<Window> m_pWindow;
     };
 
     extern Application* CreatApplication();
