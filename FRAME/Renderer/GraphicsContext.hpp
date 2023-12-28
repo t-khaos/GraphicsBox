@@ -4,7 +4,7 @@ struct GLFWwindow;
 
 namespace FRAME
 {
-    class GraphicsContext
+    struct GraphicsContext
     {
     public:
         GraphicsContext(GLFWwindow* window);
