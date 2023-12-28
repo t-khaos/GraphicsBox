@@ -13,4 +13,6 @@
 
 #include <filesystem>
 
+#include <cassert>
+
 #include "Core/Core.hpp"
