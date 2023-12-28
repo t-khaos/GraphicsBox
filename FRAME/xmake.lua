@@ -1,9 +1,7 @@
 target("FRAME")
 
-    if is_mode("debug") then 
-        add_defines("FRAME_MODE_DEBUG")
-    elseif is_mode("release") then
-        add_defines("FRAME_MODE_RELEASE")
+    if is_mode("release") then
+        add_defines("NDEBUG")
     end
     
     add_defines("FRAME_EXPORT")
@@ -17,6 +15,6 @@ target("FRAME")
     add_headerfiles("./(**.hpp)")
     add_headerfiles("./(**.h)")
 
-    add_packages("glfw", "glad", "glm", "stb", "spdlog")
+    add_packages("glfw", "glad", "glm", "stb", "spdlog", "assimp")
 
 target_end()
