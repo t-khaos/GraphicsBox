@@ -15,7 +15,7 @@ namespace FRAME
         uint32_t Height;
     };
 
-    class Window
+    struct Window
     {
     public:
         Window(const WindowProps& props);
